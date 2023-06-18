@@ -29,6 +29,7 @@ public class BaseSteps {
 
         for(String word : key.split(" ")){
             Assert.assertTrue(driver.getCurrentUrl().contains(word));
+
         }
     }
 
