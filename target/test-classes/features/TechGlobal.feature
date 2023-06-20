@@ -15,7 +15,7 @@ Feature: TechGlobal Training Functionalities
 
     Examples:
       | username   | password | message                   |
-      | johndoe    | 123456   | Invalid Username entered! !|
+      | johndoe    | 123456   | Invalid Username entered! |
       | tomsmith   | 12345    | Invalid Username entered! |
       | TechGlobal | Test1234 | You are logged in         |
 

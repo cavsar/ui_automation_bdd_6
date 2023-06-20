@@ -15,16 +15,14 @@ import pages.TechGlobalFrontendTestingHomePage;
 import pages.TechGlobalLoginFormPage;
 import utils.Driver;
 
-import java.util.List;
 
 public class TechGlobalSteps {
 
     WebDriver driver;
     TechGlobalFrontendTestingHomePage techGlobalFrontendTestingHomePage;
     TechGlobalLoginFormPage techGlobalLoginFormPage;
-
     TechGlobalDynamicTablesPage techGlobalDynamicTablesPage;
-    TechGlobalFrontendProject4 techGlobalFrontendProject4;
+
 
     @Before
     public void setDriver() {
@@ -32,11 +30,12 @@ public class TechGlobalSteps {
         techGlobalFrontendTestingHomePage = new TechGlobalFrontendTestingHomePage();
         techGlobalLoginFormPage = new TechGlobalLoginFormPage();
         techGlobalDynamicTablesPage = new TechGlobalDynamicTablesPage();
-        techGlobalFrontendProject4=new TechGlobalFrontendProject4();
+
     }
 
     @Given("user selects the {string} option")
     public void user_selects_the_option(String option) {
+
         techGlobalFrontendTestingHomePage.clickOnCard(option);
     }
 
@@ -100,42 +99,5 @@ public class TechGlobalSteps {
             Assert.assertTrue(true);
         }
     }
-    @Given("user is on https:\\/\\/techglobal-training.com\\/frontend\\/project{int}")
-    public void userIsOnHttpsTechglobalTrainingComFrontendProject(){
 
-    }
-    @Then("user should see the “Inventory” heading")
-    public void user_should_see_the_inventory_heading() {
-        Assert.assertTrue(techGlobalFrontendProject4.tableHeader.isDisplayed());
-    }
-    @Then("user should see the table with the headers below")
-    public void user_should_see_the_table_with_the_headers_below(io.cucumber.datatable.DataTable dataTable) {
-        List<String> expectedResult =dataTable.asList();
-        for (int i = 0; i < expectedResult.size(); i++) {
-            for (int j = 0; j < expectedResult.get(i).length();j++){
-                Assert.assertTrue(techGlobalFrontendProject4.tableHeader.isDisplayed());
-                Assert.assertEquals(techGlobalFrontendProject4.tableRows.get(j).getText(),expectedResult);
-            }
-
-        }
-
-    }
-    @Then("the user should see the table with the rows below")
-    public void the_user_should_see_the_table_with_the_rows_below(io.cucumber.datatable.DataTable dataTable) {
-        List<String> expectedResult =dataTable.asList();
-        for (int i = 0; i < expectedResult.size(); i++) {
-            for (int j = 0; j < expectedResult.get(i).length();j++){
-                Assert.assertTrue(techGlobalFrontendProject4.tableRows.get(i).isDisplayed());
-                Assert.assertEquals(techGlobalFrontendProject4.tableRows.get(j).getText(),expectedResult);
-    }}}
-    @Then("user should see the “ADD PRODUCT” button is enabled")
-    public void user_should_see_the_add_product_button_is_enabled() {
-        Assert.assertTrue(techGlobalFrontendProject4.addButton.isEnabled());
-    }
-    @Then("user should see the “Total = ${double}” text displayed")
-    public void user_should_see_the_total_$_text_displayed(Double double1) {
-       Assert.assertTrue(techGlobalFrontendProject4.totalAmount.isDisplayed());
-    }
-
-
-}
+   }
