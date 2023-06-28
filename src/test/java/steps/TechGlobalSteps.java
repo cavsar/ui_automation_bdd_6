@@ -1,7 +1,6 @@
 package steps;
 
 import io.cucumber.java.Before;
-import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -9,10 +8,7 @@ import org.junit.Assert;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.NotFoundException;
 import org.openqa.selenium.WebDriver;
-import pages.TechGlobalDynamicTablesPage;
-import pages.TechGlobalFrontendProject4;
-import pages.TechGlobalFrontendTestingHomePage;
-import pages.TechGlobalLoginFormPage;
+import pages.*;
 import utils.Driver;
 
 
@@ -68,7 +64,7 @@ public class TechGlobalSteps {
 
     @Then("user should see the {string} heading")
     public void user_should_see_the_heading(String headingText) {
-        Assert.assertEquals(headingText, techGlobalDynamicTablesPage.headingText.getText());
+        Assert.assertEquals(headingText, techGlobalDynamicTablesPage.headingText.getText(), "Dynamic Elements ");
     }
 
     @When("user clicks the {string} button")
