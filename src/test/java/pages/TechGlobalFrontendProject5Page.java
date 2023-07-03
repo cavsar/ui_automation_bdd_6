@@ -16,7 +16,7 @@ public class TechGlobalFrontendProject5Page {
     @FindBy(css = ".mb-5")
     public WebElement mainHeading;
 
-    @FindBy(id="sub_heading")
+    @FindBy(id = "sub_heading")
     public WebElement subHeading;
 
     @FindBy(id = "content")
@@ -28,12 +28,16 @@ public class TechGlobalFrontendProject5Page {
     @FindBy(id = "next")
     public WebElement nextButton;
 
-    @FindBy(css = ".Pagination_myPagination__JnsKX")
-    List<WebElement> countries;
+    @FindBy(css = ".city_image")
+    public WebElement cityImage;
+
+    @FindBy(css = "p[class*='info']")
+    public List<WebElement> cityInfo;
 
 
-
-
-
-
+    public void clickNextButton(){
+        while(nextButton.isEnabled()){
+            nextButton.click();
+        }
+    }
 }
